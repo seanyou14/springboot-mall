@@ -15,13 +15,10 @@ public class Product {
     private Date createdDate;
     private Date lastModifiedDate;
 
-    public Integer getProductId() {
-        return productId;
+    public Integer getProductId() {return productId;
     }
 
-    public void  setProductId(Integer productId) {
-        this.productId = productId;
-    }
+    public void  setProductId(Integer productId) {this.productId = productId;  }
 
     public String getProductName() {
         return productName;
