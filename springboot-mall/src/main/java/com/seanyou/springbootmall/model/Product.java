@@ -1,11 +1,13 @@
 package com.seanyou.springbootmall.model;
 
+import com.seanyou.springbootmall.constant.ProductCategory;
+
 import java.util.Date;
 
 public class Product {
-    private Integer product_id;
+    private Integer productId;
     private String productName;
-    private String category;
+    private ProductCategory category;
     private String imageUrl;
     private Integer price;
     private Integer stock;
@@ -13,12 +15,12 @@ public class Product {
     private Date createdDate;
     private Date lastModifiedDate;
 
-    public Integer getProduct_id() {
-        return product_id;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void  setProductId(Integer product_id) {
-        this.product_id = product_id;
+    public void  setProductId(Integer productId) {
+        this.productId = productId;
     }
 
     public String getProductName() {
@@ -29,11 +31,11 @@ public class Product {
         this.productName = productName;
     }
 
-    public String getCategory() {
+    public ProductCategory getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(ProductCategory category) {
         this.category = category;
     }
 
