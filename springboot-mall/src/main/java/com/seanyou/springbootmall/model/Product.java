@@ -5,6 +5,7 @@ import com.seanyou.springbootmall.constant.ProductCategory;
 import java.util.Date;
 
 public class Product {
+
     private Integer productId;
     private String productName;
     private ProductCategory category;
