@@ -2,11 +2,13 @@ package com.seanyou.springbootmall.dao.impl;
 
 import com.seanyou.springbootmall.dao.ProductDao;
 import com.seanyou.springbootmall.model.Product;
+import com.seanyou.springbootmall.rowmapper.ProductRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Component
@@ -20,10 +22,15 @@ public class ProductDaoImpl implements ProductDao{
                 " description, created_date, last_modified_date " +
                 "FROM product WHERE product_id = :productId";
 
-    Map<String, Object> map = new HashMap<>();
-    map.put("productId", productId);
+        Map<String, Object> map = new HashMap<>();
+        map.put("productId", productId);
 
-    namedParameterJdbcTemplate.query(sql, map,);
-        return null;
+        List<Product> productList = namedParameterJdbcTemplate.query(sql, map, new ProductRowMapper());
+
+        if (productList.size() > 0) {
+            return productList.get(0);
+        } else {
+            return null;
+        }
     }
 }
